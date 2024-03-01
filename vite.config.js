@@ -5,8 +5,6 @@ import WebWorkerPlugin from 'vite-plugin-webworker-service';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  host: '94.130.171.4',
-	port: 5173,
   worker: {
     format: 'es',
   },
@@ -19,6 +17,8 @@ export default defineConfig({
     exclude: ['@aleohq/wasm', '@aleohq/sdk'],
   },
   server: {
+    host: '94.130.171.4',
+    port: 5173,
     headers: {
       'Cross-Origin-Opener-Policy': 'same-origin',
       'Cross-Origin-Embedder-Policy': 'require-corp',
