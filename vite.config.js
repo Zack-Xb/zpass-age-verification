@@ -22,6 +22,7 @@ export default defineConfig({
     headers: {
       'Cross-Origin-Opener-Policy': 'cross-origin',
       'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Resource-Policy': 'cross-origin',
     },
   },
 });
