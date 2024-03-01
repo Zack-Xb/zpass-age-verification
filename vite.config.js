@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     host: '94.130.171.4',
-    port: 5173,
+    port: 80,
     headers: {
       'Cross-Origin-Opener-Policy': 'same-origin',
       'Cross-Origin-Embedder-Policy': 'require-corp',
