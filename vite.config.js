@@ -17,7 +17,7 @@ export default defineConfig({
     exclude: ['@aleohq/wasm', '@aleohq/sdk'],
   },
   server: {
-    host: '94.130.171.4',
+    host: '0.0.0.0',
     port: 80,
     headers: {
       'Cross-Origin-Opener-Policy': 'same-origin',

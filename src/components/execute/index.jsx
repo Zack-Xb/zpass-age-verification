@@ -21,6 +21,7 @@ import {
   SIGVERIFY_PROGRAM_KECCAK_256,
   SIGVERIFY_PROGRAM_SHA3_256,
   SIGVERIFY_PROGRAM,
+  AGEVERIFY_PROGRAM,
 } from '../../consts.ts';
 import { useGlobalProvider } from '../../contexts/global.js';
 
@@ -43,6 +44,7 @@ export const Execute = () => {
   }, [global]);
 
   const PROGRAM_MAP = {
+    offchain_age_verifier: AGEVERIFY_PROGRAM,
     offchain_verifier: SIGVERIFY_PROGRAM,
     offchain_verifier_keccak256: SIGVERIFY_PROGRAM_KECCAK_256,
     offchain_verifier_sha3_256: SIGVERIFY_PROGRAM_SHA3_256,
@@ -196,6 +198,7 @@ export const Execute = () => {
     try {
       processedProgram = await aleoWASM.Program.fromString(value);
     } catch (e) {
+      console.log(e);
       alert('error');
       setFunctions([]);
       return;
@@ -263,6 +266,10 @@ export const Execute = () => {
             value={selectValue}
             style={{ width: '250px' }}
             options={[
+              {
+                value: 'offchain_age_verifier',
+                label: 'offchain_age_verifier.aleo',
+              },
               {
                 value: 'offchain_verifier',
                 label: 'offchain_verifier.aleo',
